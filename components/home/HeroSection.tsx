@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-green-50 to-blue-50 pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-green-50 to-blue-50 pt-28 sm:pt-32 pb-12 sm:pb-20 px-4 overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <img 
           src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600&q=80" 

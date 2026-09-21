@@ -132,14 +132,30 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="w-6 h-6 text-gray-900" /> : <Menu className="w-6 h-6 text-gray-900" />}
-            </button>
+            {/* Mobile Actions - Cart + Menu */}
+            <div className="lg:hidden flex items-center gap-2">
+              {isSignedIn && (
+                <Link
+                  href="/cart"
+                  className="relative p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                  aria-label="Shopping Cart"
+                >
+                  <ShoppingCart className="w-5 h-5 text-gray-700" />
+                  {cartCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center text-[10px]">
+                      {cartCount > 99 ? '99+' : cartCount}
+                    </span>
+                  )}
+                </Link>
+              )}
+              <button
+                className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X className="w-6 h-6 text-gray-900" /> : <Menu className="w-6 h-6 text-gray-900" />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
@@ -156,14 +172,6 @@ export default function Navbar() {
                 </Link>
                 {isSignedIn && (
                   <>
-                    <Link
-                      href="/cart"
-                      className="flex items-center gap-2 text-gray-700 font-medium hover:text-green-600 transition-colors py-2"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      <ShoppingCart className="w-4 h-4" />
-                      <span>Cart {cartCount > 0 && `(${cartCount})`}</span>
-                    </Link>
                     <Link
                       href="/dashboard"
                       className="flex items-center gap-2 text-gray-700 font-medium hover:text-green-600 transition-colors py-2"
