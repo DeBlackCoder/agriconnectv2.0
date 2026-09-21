@@ -39,6 +39,14 @@ html {
   max-width: 100vw;
 }
 
+/* Desktop max-width constraint */
+@media (min-width: 1536px) {
+  body {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
 /* ============================================
    LAYOUT & SECTIONS
    ============================================ */
@@ -351,7 +359,7 @@ img {
 
 .container-custom {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -365,6 +373,13 @@ img {
 @media (min-width: 1024px) {
   .container-custom {
     padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-custom {
+    max-width: 1600px;
+    padding: 0 3rem;
   }
 }
 
