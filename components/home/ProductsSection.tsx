@@ -14,24 +14,24 @@ const products = [
 
 export default function ProductsSection() {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-12 sm:py-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             Our Products & Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             Whether it's working with rice farmers in Nigeria, sourcing vegetables in the North, 
             or delivering fresh produce to urban markets, we help meet the increasing demand for quality food.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {products.map((product, i) => (
             <Link key={i} href={`/products?category=${product.name}`}>
-              <div className={`${product.bgColor} p-6 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group`}>
-                <product.icon className={`w-12 h-12 mb-4 ${product.textColor}`} />
-                <h3 className={`text-lg font-bold ${product.textColor} group-hover:underline`}>
+              <div className={`${product.bgColor} p-4 sm:p-6 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group`}>
+                <product.icon className={`w-8 h-8 sm:w-12 sm:h-12 mb-2 sm:mb-4 ${product.textColor}`} />
+                <h3 className={`text-sm sm:text-lg font-bold ${product.textColor} group-hover:underline`}>
                   {product.name}
                 </h3>
               </div>

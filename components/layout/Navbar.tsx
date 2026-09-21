@@ -48,9 +48,9 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               <div className="bg-green-600 p-2 rounded-lg group-hover:bg-green-700 transition-colors">
-                <Sprout className="w-6 h-6 text-white" />
+                <Sprout className="w-6 h-6 sm:w-5 sm:h-5 text-white" />
               </div>
-              <span className="text-2xl font-bold text-gray-900">AgriConnect</span>
+              <span className="text-xl sm:text-2xl font-bold text-gray-900">AgriConnect</span>
             </Link>
 
             {/* Desktop Navigation */}

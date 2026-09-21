@@ -360,3 +360,113 @@ img {
     padding: 0 2rem;
   }
 }
+
+/* ============================================
+   MOBILE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-width: 640px) {
+  /* Base font size reduction */
+  html {
+    font-size: 14px;
+  }
+  
+  /* Heading size reductions */
+  h1 {
+    font-size: 1.75rem !important;
+    line-height: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.75rem !important;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.5rem !important;
+  }
+  
+  h4 {
+    font-size: 1.125rem !important;
+    line-height: 1.375rem !important;
+  }
+  
+  /* Body text */
+  p, div:not(.text-xl):not(.text-2xl):not(.text-3xl):not(.text-4xl), span {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  /* Small text */
+  .text-sm {
+    font-size: 0.75rem !important;
+  }
+  
+  .text-xs {
+    font-size: 0.625rem !important;
+  }
+  
+  /* Button padding reduction */
+  .btn-primary, .btn-secondary, button {
+    padding: 0.625rem 1.25rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Card padding reduction */
+  .card, [class*="card-"], [class*="p-8"], [class*="p-6"] {
+    padding: 1rem !important;
+  }
+  
+  /* Section spacing reduction */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  /* Container padding */
+  .container-custom {
+    padding: 0 0.75rem !important;
+  }
+  
+  /* Reduce margins */
+  .mb-8, .my-8 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .mt-8, .my-8 {
+    margin-top: 1.5rem !important;
+  }
+  
+  .mb-6, .my-6 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .mt-6, .my-6 {
+    margin-top: 1rem !important;
+  }
+  
+  /* Input field sizes */
+  input, textarea, select {
+    font-size: 0.875rem !important;
+    padding: 0.625rem 0.875rem !important;
+  }
+  
+  /* Icon sizes */
+  svg {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  
+  /* Large icons exception */
+  .w-16, .w-20, .w-24 {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+  
+  /* Badge sizes */
+  .badge, [class*="badge"] {
+    font-size: 0.625rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+}
