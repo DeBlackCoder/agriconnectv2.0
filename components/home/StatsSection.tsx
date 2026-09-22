@@ -7,7 +7,7 @@ const stats = [
     label: 'Farmers',
     color: 'purple',
     bgColor: 'bg-purple-100',
-    textColor: 'text-purple-600',
+    iconColor: 'text-purple-600',
   },
   {
     icon: Package,
@@ -15,7 +15,7 @@ const stats = [
     label: 'Products Listed',
     color: 'yellow',
     bgColor: 'bg-yellow-100',
-    textColor: 'text-yellow-600',
+    iconColor: 'text-yellow-600',
   },
   {
     icon: Zap,
@@ -23,30 +23,31 @@ const stats = [
     label: 'Orders Delivered',
     color: 'pink',
     bgColor: 'bg-pink-100',
-    textColor: 'text-pink-600',
+    iconColor: 'text-pink-600',
   },
   {
     icon: Star,
-    value: '4.9★',
+    value: '4.9',
     label: 'Customer Rating',
     color: 'blue',
     bgColor: 'bg-blue-100',
-    textColor: 'text-blue-600',
+    iconColor: 'text-blue-600',
+    suffix: '★',
   },
 ];
 
 export default function StatsSection() {
   return (
-    <section className="py-12 sm:py-20 px-4 bg-white">
+    <section className="py-12 sm:py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className={`w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-4 ${stat.bgColor} rounded-full flex items-center justify-center`}>
-                <stat.icon className={`w-6 h-6 sm:w-8 sm:h-8 ${stat.textColor}`} />
+            <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
+              <div className={`w-14 h-14 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 ${stat.bgColor} rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300`}>
+                <stat.icon className={`w-7 h-7 sm:w-10 sm:h-10 ${stat.iconColor}`} strokeWidth={2} />
               </div>
-              <div className={`text-2xl sm:text-4xl md:text-5xl font-bold ${stat.textColor} mb-1 sm:mb-2`}>
-                {stat.value}
+              <div className={`text-2xl sm:text-4xl md:text-5xl font-bold ${stat.iconColor} mb-1 sm:mb-2`}>
+                {stat.value}{stat.suffix || ''}
               </div>
               <div className="text-xs sm:text-base text-gray-600 font-medium">{stat.label}</div>
             </div>

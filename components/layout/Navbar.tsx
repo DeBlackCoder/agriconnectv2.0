@@ -43,7 +43,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
@@ -160,12 +160,13 @@ export default function Navbar() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-gray-200">
+            <div className="lg:hidden py-4 border-t border-gray-200 animate-slideDown">
               <div className="flex flex-col gap-4">
                 <Link
                   href="/products"
-                  className="flex items-center gap-2 text-gray-700 font-medium hover:text-green-600 transition-colors py-2"
+                  className="flex items-center gap-2 text-gray-700 font-medium hover:text-green-600 transition-colors py-2 animate-fadeInUp"
                   onClick={() => setIsMenuOpen(false)}
+                  style={{ animationDelay: '0.1s' }}
                 >
                   <ShoppingCart className="w-4 h-4" />
                   <span>Marketplace</span>
@@ -174,16 +175,18 @@ export default function Navbar() {
                   <>
                     <Link
                       href="/dashboard"
-                      className="flex items-center gap-2 text-gray-700 font-medium hover:text-green-600 transition-colors py-2"
+                      className="flex items-center gap-2 text-gray-700 font-medium hover:text-green-600 transition-colors py-2 animate-fadeInUp"
                       onClick={() => setIsMenuOpen(false)}
+                      style={{ animationDelay: '0.2s' }}
                     >
                       <LayoutDashboard className="w-4 h-4" />
                       <span>Dashboard</span>
                     </Link>
                     <Link
                       href="/profile"
-                      className="flex items-center gap-2 text-gray-700 font-medium hover:text-green-600 transition-colors py-2"
+                      className="flex items-center gap-2 text-gray-700 font-medium hover:text-green-600 transition-colors py-2 animate-fadeInUp"
                       onClick={() => setIsMenuOpen(false)}
+                      style={{ animationDelay: '0.3s' }}
                     >
                       <UserCircle className="w-4 h-4" />
                       <span>Profile</span>
@@ -192,14 +195,14 @@ export default function Navbar() {
                 )}
                 
                 {!isLoading && (
-                  <div className="pt-4 border-t border-gray-200 flex flex-col gap-2">
+                  <div className="pt-4 border-t border-gray-200 flex flex-col gap-2 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
                     {isSignedIn ? (
                       <button
                         onClick={() => {
                           setIsMenuOpen(false);
                           setShowSignOutModal(true);
                         }}
-                        className="w-full flex items-center justify-center gap-2 bg-white border-2 border-gray-300 text-gray-900 hover:bg-gray-50 py-2.5 rounded-lg font-medium"
+                        className="w-full flex items-center justify-center gap-2 bg-white border-2 border-gray-300 text-gray-900 hover:bg-gray-50 py-2.5 rounded-lg font-medium transition-colors"
                       >
                         <LogOut className="w-4 h-4" />
                         <span>Sign Out</span>
