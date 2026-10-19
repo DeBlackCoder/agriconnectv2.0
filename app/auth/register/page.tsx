@@ -57,7 +57,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-green-50 to-blue-50 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center px-4 py-12 lg:py-6 bg-gradient-to-br from-green-50 to-blue-50 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <img 
           src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600&q=80" 
@@ -65,15 +65,15 @@ export default function RegisterPage() {
           className="w-full h-full object-cover"
         />
       </div>
-      <Card variant="glass-elevated" className="w-full max-w-md p-8 relative z-10 bg-white border border-gray-200 shadow-xl">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold gradient-text mb-2">Join AgriConnect</h1>
-          <p className="text-muted">Create your account to start buying and selling</p>
+      <Card variant="glass-elevated" className="w-full max-w-md lg:max-w-sm p-8 lg:p-6 relative z-10 bg-white border border-gray-200 shadow-xl">
+        <div className="text-center mb-8 lg:mb-5">
+          <h1 className="text-3xl lg:text-2xl font-bold gradient-text mb-2">Join AgriConnect</h1>
+          <p className="text-muted lg:text-sm">Create your account to start buying and selling</p>
         </div>
 
         {error && <Alert variant="error" className="mb-6">{error}</Alert>}
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5 lg:space-y-3">
           <Input
             type="text"
             label="Full Name"
@@ -119,9 +119,9 @@ export default function RegisterPage() {
             
             {/* Password Rules Indicator */}
             {showPasswordRules && (
-              <div className="mt-3 p-4 bg-slate-50 rounded-lg border border-slate-200">
+              <div className="mt-3 lg:mt-2 p-4 lg:p-3 bg-slate-50 rounded-lg border border-slate-200">
                 <p className="text-sm font-medium text-slate-700 mb-2">Password must contain:</p>
-                <div className="space-y-1.5">
+                <div className="space-y-1.5 lg:space-y-1">
                   <PasswordRule met={passwordRules.minLength} text="At least 8 characters" />
                   <PasswordRule met={passwordRules.hasUpperCase} text="One uppercase letter (A-Z)" />
                   <PasswordRule met={passwordRules.hasLowerCase} text="One lowercase letter (a-z)" />
@@ -150,7 +150,7 @@ export default function RegisterPage() {
           </Button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-muted">
+        <p className="mt-6 lg:mt-4 text-center text-sm text-muted">
           Already have an account?{' '}
           <Link href="/auth/login" className="text-primary-neural hover:underline font-medium">
             Login here

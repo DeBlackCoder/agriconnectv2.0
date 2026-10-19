@@ -96,7 +96,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-medium mb-2 text-foreground">
+          <label className="block text-sm font-medium mb-2 lg:mb-1.5 text-foreground">
             {label}
             {required && <span className="text-red-500 ml-1">*</span>}
           </label>
@@ -119,7 +119,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             pattern={pattern}
             onChange={handleChange}
             className={`
-              w-full px-4 py-3 rounded-xl
+              w-full px-4 py-3 lg:py-2.5 lg:text-sm rounded-xl
               glass border border-white/10
               bg-transparent text-foreground
               placeholder:text-muted

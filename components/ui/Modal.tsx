@@ -2,7 +2,6 @@
 
 import { ReactNode, useEffect } from 'react';
 import { X } from 'lucide-react';
-import Button from './Button';
 
 interface ModalProps {
   isOpen: boolean;
@@ -48,11 +47,11 @@ export default function Modal({
   if (!isOpen) return null;
 
   const sizes = {
-    sm: 'max-w-md',
-    md: 'max-w-lg',
-    lg: 'max-w-2xl',
-    xl: 'max-w-4xl',
-    full: 'max-w-7xl',
+    sm: 'max-w-md lg:max-w-sm',
+    md: 'max-w-lg lg:max-w-md',
+    lg: 'max-w-2xl lg:max-w-xl',
+    xl: 'max-w-4xl lg:max-w-3xl',
+    full: 'max-w-7xl lg:max-w-6xl',
   };
 
   return (
@@ -68,14 +67,14 @@ export default function Modal({
         className={`
           relative w-full ${sizes[size]}
           glass-elevated rounded-2xl
-          max-h-[90vh] overflow-hidden
+          flex flex-col max-h-[90dvh] overflow-hidden
           animate-in fade-in zoom-in-95 duration-300
         `}
       >
         {/* Header */}
         {title && (
-          <div className="flex items-center justify-between p-6 border-b border-white/10">
-            <h2 className="text-2xl font-bold gradient-text">{title}</h2>
+          <div className="flex shrink-0 items-center justify-between p-6 lg:px-5 lg:py-4 border-b border-white/10">
+            <h2 className="text-2xl lg:text-xl font-bold gradient-text">{title}</h2>
             <button
               onClick={onClose}
               className="p-2 rounded-lg hover:bg-white/10 transition-colors"
@@ -87,13 +86,13 @@ export default function Modal({
         )}
 
         {/* Content */}
-        <div className="p-6 overflow-y-auto max-h-[calc(90vh-200px)]">
+        <div className="min-h-0 p-6 lg:p-5 overflow-y-auto">
           {children}
         </div>
 
         {/* Footer */}
         {footer && (
-          <div className="p-6 border-t border-white/10 flex items-center justify-end gap-3">
+          <div className="shrink-0 p-6 lg:px-5 lg:py-4 border-t border-white/10 flex items-center justify-end gap-3">
             {footer}
           </div>
         )}

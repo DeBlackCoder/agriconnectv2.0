@@ -472,8 +472,11 @@ body, html {
   width: 100%;
 }
 
-section, div, main {
-  max-width: 100%;
+/* Keep the overflow safeguard below component width utilities in the cascade. */
+@layer base {
+  section, div, main {
+    max-width: 100%;
+  }
 }
 
 img {

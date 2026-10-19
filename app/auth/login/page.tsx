@@ -41,7 +41,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-green-50 to-blue-50 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center px-4 lg:py-6 bg-gradient-to-br from-green-50 to-blue-50 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <img 
           src="https://images.unsplash.com/photo-1595091619535-aae57e589472?w=1600&q=80" 
@@ -49,15 +49,15 @@ export default function LoginPage() {
           className="w-full h-full object-cover"
         />
       </div>
-      <Card variant="glass-elevated" className="w-full max-w-md p-8 relative z-10 bg-white border border-gray-200 shadow-xl">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold gradient-text mb-2">Welcome Back</h1>
-          <p className="text-muted">Login to your AgriConnect account</p>
+      <Card variant="glass-elevated" className="w-full max-w-md lg:max-w-sm p-8 lg:p-6 relative z-10 bg-white border border-gray-200 shadow-xl">
+        <div className="text-center mb-8 lg:mb-5">
+          <h1 className="text-3xl lg:text-2xl font-bold gradient-text mb-2">Welcome Back</h1>
+          <p className="text-muted lg:text-sm">Login to your AgriConnect account</p>
         </div>
 
         {error && <Alert variant="error" className="mb-6">{error}</Alert>}
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5 lg:space-y-4">
           <Input
             type="email"
             label="Email"
@@ -98,7 +98,7 @@ export default function LoginPage() {
           </Button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-muted">
+        <p className="mt-6 lg:mt-4 text-center text-sm text-muted">
           Don't have an account?{' '}
           <Link href="/auth/register" className="text-primary-neural hover:underline font-medium">
             Register here

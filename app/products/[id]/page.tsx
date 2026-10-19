@@ -249,6 +249,16 @@ export default function ProductDetailsPage() {
                   </div>
                 </div>
                 <div className="flex gap-2">
+                  {/* Show Edit button if user owns this product */}
+                  {currentUser && product.seller === currentUser._id && (
+                    <Link href={`/products/${productId}/edit`}>
+                      <button
+                        className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors font-medium text-sm"
+                      >
+                        Edit
+                      </button>
+                    </Link>
+                  )}
                   <button
                     onClick={() => addToWishlist.mutate()}
                     className="p-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"

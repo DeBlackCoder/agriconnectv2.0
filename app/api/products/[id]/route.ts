@@ -106,6 +106,11 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
   }
 }
 
+// PUT /api/products/[id] - Update product (alias for PATCH)
+export async function PUT(request: NextRequest, { params }: RouteParams) {
+  return PATCH(request, { params });
+}
+
 // DELETE /api/products/[id] - Delete product (Owner only)
 export async function DELETE(request: NextRequest, { params }: RouteParams) {
   try {

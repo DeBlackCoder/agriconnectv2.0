@@ -176,8 +176,8 @@ function VerifyEmailContent() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen pt-24 pb-16 bg-gradient-to-br from-green-50 to-blue-50">
-        <div className="max-w-md mx-auto px-4">
+      <div className="min-h-screen pt-24 pb-16 lg:pb-8 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="max-w-md lg:max-w-sm mx-auto px-4">
           <Link
             href="/auth/register"
             className="inline-flex items-center gap-2 text-green-600 hover:text-green-700 font-medium mb-6"
@@ -186,35 +186,35 @@ function VerifyEmailContent() {
             Back to Register
           </Link>
 
-          <Card className="p-8 shadow-xl">
+          <Card className="p-8 lg:p-6 shadow-xl lg:text-sm">
             {isVerified ? (
               <div className="text-center">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-12 h-12 text-green-600" />
+                <div className="w-20 h-20 lg:w-14 lg:h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle2 className="w-12 h-12 lg:w-8 lg:h-8 text-green-600" />
                 </div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-4">Email Verified!</h1>
+                <h1 className="text-3xl lg:text-2xl font-bold text-gray-900 mb-4">Email Verified!</h1>
                 <p className="text-gray-600 mb-6">
                   Your account has been successfully verified. Redirecting to home...
                 </p>
               </div>
             ) : (
               <>
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Mail className="w-8 h-8 text-green-600" />
+                <div className="text-center mb-8 lg:mb-5">
+                  <div className="w-16 h-16 lg:w-12 lg:h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Mail className="w-8 h-8 lg:w-6 lg:h-6 text-green-600" />
                   </div>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-2">Verify Your Email</h1>
+                  <h1 className="text-3xl lg:text-2xl font-bold text-gray-900 mb-2">Verify Your Email</h1>
                   <p className="text-gray-600">
                     We sent a 5-digit code to
                   </p>
                   <p className="font-semibold text-gray-900">{email}</p>
                 </div>
 
-                <div className="mb-8">
+                <div className="mb-8 lg:mb-5">
                   <label className="block text-sm font-medium text-gray-700 mb-4 text-center">
                     Enter Verification Code
                   </label>
-                  <div className="flex gap-3 justify-center" onPaste={handlePaste}>
+                  <div className="flex gap-3 lg:gap-2 justify-center" onPaste={handlePaste}>
                     {code.map((digit, index) => (
                       <input
                         key={index}
@@ -225,7 +225,7 @@ function VerifyEmailContent() {
                         value={digit}
                         onChange={(e) => handleCodeChange(index, e.target.value)}
                         onKeyDown={(e) => handleKeyDown(index, e)}
-                        className="w-14 h-14 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-600 focus:ring-2 focus:ring-green-200 focus:outline-none transition-all"
+                        className="w-14 h-14 lg:w-11 lg:h-11 text-center text-2xl lg:text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-green-600 focus:ring-2 focus:ring-green-200 focus:outline-none transition-all"
                         disabled={isVerifying}
                       />
                     ))}

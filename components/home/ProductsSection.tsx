@@ -46,7 +46,7 @@ const products = [
   },
   { 
     name: 'Livestock Feed', 
-    image: 'https://images.pexels.com/photos/2280545/pexels-photo-2280545.jpeg?auto=compress&cs=tinysrgb&w=400',
+    image: 'https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400',
     bgColor: 'bg-amber-50', 
     textColor: 'text-amber-600' 
   },

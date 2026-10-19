@@ -47,10 +47,10 @@ export default function ForgotPasswordPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-4 py-12">
-        <Card className="max-w-md w-full p-8 text-center">
-          <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-10 h-10 text-emerald-600" />
+      <div className="min-h-screen flex items-center justify-center px-4 py-12 lg:py-6">
+        <Card className="max-w-md lg:max-w-sm w-full p-8 lg:p-6 text-center">
+          <div className="w-16 h-16 lg:w-12 lg:h-12 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <CheckCircle className="w-10 h-10 lg:w-7 lg:h-7 text-emerald-600" />
           </div>
           
           <h1 className="text-2xl font-bold mb-4">Check Your Email</h1>
@@ -83,16 +83,16 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12">
-      <Card className="max-w-md w-full p-8">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold gradient-text mb-2">Forgot Password?</h1>
-          <p className="text-muted">
+    <div className="min-h-screen flex items-center justify-center px-4 py-12 lg:py-6">
+      <Card className="max-w-md lg:max-w-sm w-full p-8 lg:p-6">
+        <div className="text-center mb-8 lg:mb-5">
+          <h1 className="text-3xl lg:text-2xl font-bold gradient-text mb-2">Forgot Password?</h1>
+          <p className="text-muted lg:text-sm">
             Enter your email and we'll send you a reset link
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6 lg:space-y-4">
           <Input
             type="email"
             placeholder="Enter your email"
